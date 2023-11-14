@@ -1,0 +1,22 @@
+def main():
+    ice_cream_types = {
+        "cookie": {"Chocolate": True, "Strawberry": True, "Mint Chocolate Chip": False, "Cookie Dough": False},
+        "cream": {"Vanilla": True, "Strawberry": True, "Mint Chocolate Chip": False, "Cookie Dough": False},
+        "banana": {"Vanilla": True, "Chocolate": True, "Mint Chocolate Chip": False, "Cookie Dough": False, "Strawberry": True},
+        "Mint Chocolate Chip": {"Chocolate": True, "Cookie Dough": True},
+        "Cookie Dough": {"Chocolate": True}
+    }
+
+    vanilla_pref = input("Does anyone in your party prefer Vanilla ice cream? ").lower() == 'yes'
+    chocolate_pref = input("Does anyone in your party prefer Chocolate ice cream? ").lower() == 'yes'
+    strawberry_pref = input("Does anyone in your party prefer Strawberry ice cream? ").lower() == 'yes'
+
+    print("\nHere are your ice cream type choices:")
+    for ice_cream_type, flavors in ice_cream_types.items():
+        if (not vanilla_pref or flavors.get("Vanilla")) and \
+           (not chocolate_pref or flavors.get("Chocolate")) and \
+           (not strawberry_pref or flavors.get("Strawberry")):
+            print(ice_cream_type)
+
+if __name__ == "__main__":
+    main()
